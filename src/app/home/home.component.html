@@ -1,13 +1,85 @@
 <ActionBar>
-  <Label text="Home"></Label>
+  <Label text="Depress App"></Label>
 </ActionBar>
 
-<GridLayout>
-  <ListView [items]="items">
-    <ng-template let-item="item">
-      <StackLayout [nsRouterLink]="['../item', item.id]">
-        <Label [text]="item.name"></Label>
-      </StackLayout>
-    </ng-template>
-  </ListView>
-</GridLayout>
+<ScrollView orientation="vertical">
+	<WrapLayout>
+		<FlexboxLayout height="80">
+			<Label text="Spánek" paddingLeft="20" width="50%" height="80" class="wrapper-box" textWrap="true"></Label>
+			<CheckBox text="1" [checked]="value1 === 1" boxType="circle" (tap)="onValue1Change(1)"></CheckBox>
+			<CheckBox text="2" [checked]="value1 === 2" boxType="circle" (tap)="onValue1Change(2)"></CheckBox>
+			<CheckBox text="3" [checked]="value1 === 3" boxType="circle" (tap)="onValue1Change(3)"></CheckBox>
+			<CheckBox text="4" [checked]="value1 === 4" boxType="circle" (tap)="onValue1Change(4)"></CheckBox>
+		</FlexboxLayout>
+		<FlexboxLayout height="80">
+			<Label text="Bolest hlavy" paddingLeft="20" width="50%" height="80" class="wrapper-box" textWrap="true"></Label>
+			<CheckBox text="1" [checked]="value2 === 1" boxType="circle" (tap)="onValue2Change(1)"></CheckBox>
+			<CheckBox text="2" [checked]="value2 === 2" boxType="circle" (tap)="onValue2Change(2)"></CheckBox>
+			<CheckBox text="3" [checked]="value2 === 3" boxType="circle" (tap)="onValue2Change(3)"></CheckBox>
+			<CheckBox text="4" [checked]="value2 === 4" boxType="circle" (tap)="onValue2Change(4)"></CheckBox>
+		</FlexboxLayout>
+		<FlexboxLayout height="80">
+			<Label text="Únava" paddingLeft="20" width="50%" height="80" class="wrapper-box" textWrap="true"></Label>
+			<CheckBox text="1" [checked]="value3 === 1" boxType="circle" (tap)="onValue3Change(1)"></CheckBox>
+			<CheckBox text="2" [checked]="value3 === 2" boxType="circle" (tap)="onValue3Change(2)"></CheckBox>
+			<CheckBox text="3" [checked]="value3 === 3" boxType="circle" (tap)="onValue3Change(3)"></CheckBox>
+			<CheckBox text="4" [checked]="value3 === 4" boxType="circle" (tap)="onValue3Change(4)"></CheckBox>
+		</FlexboxLayout>
+		<FlexboxLayout height="80">
+			<Label text="Chuť k jídlu" paddingLeft="20" width="50%" height="80" class="wrapper-box" textWrap="true"></Label>
+			<CheckBox text="1" [checked]="value4 === 1" boxType="circle" (tap)="onValue4Change(1)"></CheckBox>
+			<CheckBox text="2" [checked]="value4 === 2" boxType="circle" (tap)="onValue4Change(2)"></CheckBox>
+			<CheckBox text="3" [checked]="value4 === 3" boxType="circle" (tap)="onValue4Change(3)"></CheckBox>
+			<CheckBox text="4" [checked]="value4 === 4" boxType="circle" (tap)="onValue4Change(4)"></CheckBox>
+		</FlexboxLayout>
+		<FlexboxLayout height="80">
+			<Label text="Zácpa" paddingLeft="20" width="50%" height="80" class="wrapper-box" textWrap="true"></Label>
+			<CheckBox text="1" [checked]="value5 === 1" boxType="circle" (tap)="onValue5Change(1)"></CheckBox>
+			<CheckBox text="2" [checked]="value5 === 2" boxType="circle" (tap)="onValue5Change(2)"></CheckBox>
+			<CheckBox text="3" [checked]="value5 === 3" boxType="circle" (tap)="onValue5Change(3)"></CheckBox>
+			<CheckBox text="4" [checked]="value5 === 4" boxType="circle" (tap)="onValue5Change(4)"></CheckBox>
+		</FlexboxLayout>
+		<FlexboxLayout height="80">
+			<Label text="Sebeobviňující myšlenky" paddingLeft="20" width="50%" height="80" class="wrapper-box" textWrap="true"></Label>
+			<CheckBox text="1" [checked]="value6 === 1" boxType="circle" (tap)="onValue6Change(1)"></CheckBox>
+			<CheckBox text="2" [checked]="value6 === 2" boxType="circle" (tap)="onValue6Change(2)"></CheckBox>
+			<CheckBox text="3" [checked]="value6 === 3" boxType="circle" (tap)="onValue6Change(3)"></CheckBox>
+			<CheckBox text="4" [checked]="value6 === 4" boxType="circle" (tap)="onValue6Change(4)"></CheckBox>
+		</FlexboxLayout>
+		<FlexboxLayout height="80">
+			<Label text="Nálada" paddingLeft="20" width="50%" height="80" class="wrapper-box" textWrap="true"></Label>
+			<CheckBox text="1" [checked]="value7 === 1" boxType="circle" (tap)="onValue7Change(1)"></CheckBox>
+			<CheckBox text="2" [checked]="value7 === 2" boxType="circle" (tap)="onValue7Change(2)"></CheckBox>
+			<CheckBox text="3" [checked]="value7 === 3" boxType="circle" (tap)="onValue7Change(3)"></CheckBox>
+			<CheckBox text="4" [checked]="value7 === 4" boxType="circle" (tap)="onValue7Change(4)"></CheckBox>
+		</FlexboxLayout>
+		<FlexboxLayout height="80">
+			<Label text="Sebedestruktivní myšlenky" paddingLeft="20" width="50%" height="80" class="wrapper-box" textWrap="true"></Label>
+			<CheckBox text="1" [checked]="value8 === 1" boxType="circle" (tap)="onValue8Change(1)"></CheckBox>
+			<CheckBox text="2" [checked]="value8 === 2" boxType="circle" (tap)="onValue8Change(2)"></CheckBox>
+			<CheckBox text="3" [checked]="value8 === 3" boxType="circle" (tap)="onValue8Change(3)"></CheckBox>
+			<CheckBox text="4" [checked]="value8 === 4" boxType="circle" (tap)="onValue8Change(4)"></CheckBox>
+		</FlexboxLayout>
+		<FlexboxLayout height="80">
+			<Label text="Soustředěnost" paddingLeft="20" width="50%" height="80" class="wrapper-box" textWrap="true"></Label>
+			<CheckBox text="1" [checked]="value9 === 1" boxType="circle" (tap)="onValue9Change(1)"></CheckBox>
+			<CheckBox text="2" [checked]="value9 === 2" boxType="circle" (tap)="onValue9Change(2)"></CheckBox>
+			<CheckBox text="3" [checked]="value9 === 3" boxType="circle" (tap)="onValue9Change(3)"></CheckBox>
+			<CheckBox text="4" [checked]="value9 === 4" boxType="circle" (tap)="onValue9Change(4)"></CheckBox>
+		</FlexboxLayout>
+		<FlexboxLayout height="80">
+			<Label text="Tělesná nepohoda" paddingLeft="20" width="50%" height="80" class="wrapper-box" textWrap="true"></Label>
+			<CheckBox text="1" [checked]="value10 === 1" boxType="circle" (tap)="onValue10Change(1)"></CheckBox>
+			<CheckBox text="2" [checked]="value10 === 2" boxType="circle" (tap)="onValue10Change(2)"></CheckBox>
+			<CheckBox text="3" [checked]="value10 === 3" boxType="circle" (tap)="onValue10Change(3)"></CheckBox>
+			<CheckBox text="4" [checked]="value10 === 4" boxType="circle" (tap)="onValue10Change(4)"></CheckBox>
+		</FlexboxLayout>
+		<FlexboxLayout height="80">
+			<Label text="Pocit napětí" paddingLeft="20" width="50%" height="80" class="wrapper-box" textWrap="true"></Label>
+			<CheckBox text="1" [checked]="value11 === 1" boxType="circle" (tap)="onValue11Change(1)"></CheckBox>
+			<CheckBox text="2" [checked]="value11 === 2" boxType="circle" (tap)="onValue11Change(2)"></CheckBox>
+			<CheckBox text="3" [checked]="value11 === 3" boxType="circle" (tap)="onValue11Change(3)"></CheckBox>
+			<CheckBox text="4" [checked]="value11 === 4" boxType="circle" (tap)="onValue11Change(4)"></CheckBox>
+		</FlexboxLayout>
+	</WrapLayout>
+</ScrollView>
