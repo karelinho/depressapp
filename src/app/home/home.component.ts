@@ -5,9 +5,17 @@ import { DataService, DataItem } from '../shared/data.service'
 @Component({
   selector: 'Home',
   templateUrl: './home.component.html',
+  styleUrls: [
+    'home.component.scss'
+  ]
 })
 export class HomeComponent implements OnInit {
-  items: Array<DataItem>
+
+  minDate: Date = new Date();
+
+  date = this.minDate.getDate() + '.' + this.minDate.getMonth() + '.' + this.minDate.getFullYear();
+
+  items: Array<DataItem>;
 
   value1 = 1;
 
@@ -79,5 +87,9 @@ export class HomeComponent implements OnInit {
 
   onValue11Change(value: number) {
     this.value11 = value;
+  }
+
+  saveScores() {
+    console.log('saving scores');
   }
 }

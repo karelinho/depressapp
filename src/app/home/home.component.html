@@ -5,6 +5,9 @@
 <ScrollView orientation="vertical">
 	<WrapLayout>
 		<FlexboxLayout height="80">
+			<Label [text]="date" paddingLeft="20" textAlignment="center" width="100%" height="80" class="h1" textWrap="true"></Label>
+		</FlexboxLayout>
+		<FlexboxLayout height="80">
 			<Label text="Spánek" paddingLeft="20" width="50%" height="80" class="wrapper-box" textWrap="true"></Label>
 			<CheckBox text="1" [checked]="value1 === 1" boxType="circle" (tap)="onValue1Change(1)"></CheckBox>
 			<CheckBox text="2" [checked]="value1 === 2" boxType="circle" (tap)="onValue1Change(2)"></CheckBox>
@@ -81,5 +84,8 @@
 			<CheckBox text="3" [checked]="value11 === 3" boxType="circle" (tap)="onValue11Change(3)"></CheckBox>
 			<CheckBox text="4" [checked]="value11 === 4" boxType="circle" (tap)="onValue11Change(4)"></CheckBox>
 		</FlexboxLayout>
+		<StackLayout height="80" orientation="vertical" width="100%">
+			<Button text="Uložit" horizontalAlignment="stretch" (tap)="saveScores()" class="-primary send-button"></Button>
+		</StackLayout>
 	</WrapLayout>
 </ScrollView>
