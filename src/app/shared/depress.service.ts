@@ -1,4 +1,22 @@
-import { Injectable } from '@angular/core'
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders  } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+export interface DepressItem {
+  date: Date;
+  user: number;
+  sleep: number;
+  headache: number;
+  tiredness: number;
+  appetite: number;
+  constipation: number;
+  self_blame_thoughts: number;
+  mood: number;
+  self_destructive_thoughts: number;
+  concentration: number;
+  physical_discomfort: number;
+  tense_feeling: number;
+}
 
 export interface DataItem {
   id: number
@@ -7,9 +25,12 @@ export interface DataItem {
 }
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class DataService {
+export class DepressService {
+
+  baseUrl = 'http://127.0.0.1:8000/api/depress/';
+
   private items = new Array<DataItem>(
     {
       id: 1,
@@ -111,10 +132,28 @@ export class DataService {
       name: 'Item 20',
       description: 'Description for Item 20',
     }
-  )
+  );
 
-  getItems(): Array<DataItem> {
-    return this.items
+  constructor(private httpClient: HttpClient) { }
+
+  getDailyReport(): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: 'Token 61a014471d6be56e396ad18504cbca96a77feb89'
+    });
+    return this.httpClient.get(this.baseUrl, {headers: headers});
+    // return new Observable<any>(subscriber => {
+    //   subscriber.next(this.items);
+    // });
+  }
+
+  getItems(): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type':  'application/json',
+      Authorization: 'Token 61a014471d6be56e396ad18504cbca96a77feb89'
+    });
+    return this.httpClient.get(this.baseUrl, {headers: headers});
+    // return this.items
   }
 
   getItem(id: number): DataItem {

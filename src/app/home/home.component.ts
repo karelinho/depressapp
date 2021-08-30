@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core'
-
-import { DataService, DataItem } from '../shared/data.service'
+import { DepressService } from '../shared/depress.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'Home',
@@ -14,8 +13,6 @@ export class HomeComponent implements OnInit {
   minDate: Date = new Date();
 
   date = this.minDate.getDate() + '.' + this.minDate.getMonth() + '.' + this.minDate.getFullYear();
-
-  items: Array<DataItem>;
 
   value1 = 1;
 
@@ -39,11 +36,10 @@ export class HomeComponent implements OnInit {
 
   value11 = 1;
 
-  constructor(private _itemService: DataService) {}
-
-  ngOnInit(): void {
-    this.items = this._itemService.getItems()
+  constructor(private _depressService: DepressService) {
   }
+
+  ngOnInit(): void {}
 
   onValue1Change(value: number) {
     this.value1 = value;
@@ -90,6 +86,12 @@ export class HomeComponent implements OnInit {
   }
 
   saveScores() {
-    console.log('saving scores');
+    this._depressService.getDailyReport().subscribe(
+      data => {
+        alert('save scores');
+        alert(data);
+      },
+      error => console.log(error)
+    );
   }
 }
