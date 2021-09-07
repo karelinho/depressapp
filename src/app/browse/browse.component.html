@@ -2,7 +2,127 @@
   <Label text="Browse"></Label>
 </ActionBar>
 
-<GridLayout class="page__content">
-  <Label class="page__content-icon far" text="&#xf1ea;"></Label>
-  <Label class="page__content-placeholder" text="<!-- Page content goes here -->"></Label>
-</GridLayout>
+<ScrollView orientation="vertical">
+	<WrapLayout *ngIf="depressData.length > 0" paddingTop="20">
+		<FlexboxLayout height="30" width="100%">
+			<Label text="" paddingLeft="20" width="35%" height="50" class="wrapper-box" textWrap="true"></Label>
+			<Label [text]="depressData[0]?.date | date:'d.M'" height="150" class="date-box"></Label>
+			<Label [text]="depressData[1]?.date | date:'d.M'" height="150" class="date-box"></Label>
+			<Label [text]="depressData[2]?.date | date:'d.M'" height="150" class="date-box"></Label>
+			<Label [text]="depressData[3]?.date | date:'d.M'" height="150" class="date-box"></Label>
+			<Label [text]="depressData[4]?.date | date:'d.M'" height="150" class="date-box"></Label>
+			<Label [text]="depressData[5]?.date | date:'d.M'" height="150" class="date-box"></Label>
+			<Label [text]="depressData[6]?.date | date:'d.M'" height="150" class="date-box"></Label>
+		</FlexboxLayout>
+		<FlexboxLayout height="30" width="100%">
+			<Label text="Spánek" paddingLeft="20" width="35%" height="50" class="wrapper-box" textWrap="true"></Label>
+			<Label [text]="depressData[0]?.sleep || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[1]?.sleep || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[2]?.sleep || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[3]?.sleep || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[4]?.sleep || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[5]?.sleep || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[6]?.sleep || '-'" height="50" class="wrapper-box"></Label>
+		</FlexboxLayout>
+		<FlexboxLayout height="30" width="100%">
+			<Label text="Bolest hlavy" paddingLeft="20" width="35%" height="50" class="wrapper-box" textWrap="true"></Label>
+			<Label [text]="depressData[0]?.headache || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[1]?.headache || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[2]?.headache || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[3]?.headache || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[4]?.headache || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[5]?.headache || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[6]?.headache || '-'" height="50" class="wrapper-box"></Label>
+		</FlexboxLayout>
+		<FlexboxLayout height="30" width="100%">
+			<Label text="Únava" paddingLeft="20" width="35%" height="50" class="wrapper-box" textWrap="true"></Label>
+			<Label [text]="depressData[0]?.tiredness || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[1]?.tiredness || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[2]?.tiredness || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[3]?.tiredness || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[4]?.tiredness || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[5]?.tiredness || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[6]?.tiredness || '-'" height="50" class="wrapper-box"></Label>
+		</FlexboxLayout>
+		<FlexboxLayout height="30" width="100%">
+			<Label text="Chuť k jídlu" paddingLeft="20" width="35%" height="50" class="wrapper-box" textWrap="true"></Label>
+			<Label [text]="depressData[0]?.appetite || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[1]?.appetite || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[2]?.appetite || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[3]?.appetite || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[4]?.appetite || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[5]?.appetite || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[6]?.appetite || '-'" height="50" class="wrapper-box"></Label>
+		</FlexboxLayout>
+		<FlexboxLayout height="30" width="100%">
+			<Label text="Zácpa" paddingLeft="20" width="35%" height="50" class="wrapper-box" textWrap="true"></Label>
+			<Label [text]="depressData[0]?.constipation || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[1]?.constipation || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[2]?.constipation || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[3]?.constipation || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[4]?.constipation || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[5]?.constipation || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[6]?.constipation || '-'" height="50" class="wrapper-box"></Label>
+		</FlexboxLayout>
+		<FlexboxLayout height="30" width="100%">
+			<Label text="Sebeobviňující myšlenky" paddingLeft="20" width="35%" height="50" class="wrapper-box" textWrap="true"></Label>
+			<Label [text]="depressData[0]?.self_blame_thoughts || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[1]?.self_blame_thoughts || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[2]?.self_blame_thoughts || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[3]?.self_blame_thoughts || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[4]?.self_blame_thoughts || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[5]?.self_blame_thoughts || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[6]?.self_blame_thoughts || '-'" height="50" class="wrapper-box"></Label>
+		</FlexboxLayout>
+		<FlexboxLayout height="30" width="100%">
+			<Label text="Nálada" paddingLeft="20" width="35%" height="50" class="wrapper-box" textWrap="true"></Label>
+			<Label [text]="depressData[0]?.mood || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[1]?.mood || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[2]?.mood || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[3]?.mood || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[4]?.mood || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[5]?.mood || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[6]?.mood || '-'" height="50" class="wrapper-box"></Label>
+		</FlexboxLayout>
+		<FlexboxLayout height="30" width="100%">
+			<Label text="Sebedestruktivní myšlenky" paddingLeft="20" width="35%" height="50" class="wrapper-box" textWrap="true"></Label>
+			<Label [text]="depressData[0]?.self_destructive_thoughts || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[1]?.self_destructive_thoughts || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[2]?.self_destructive_thoughts || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[3]?.self_destructive_thoughts || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[4]?.self_destructive_thoughts || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[5]?.self_destructive_thoughts || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[6]?.self_destructive_thoughts || '-'" height="50" class="wrapper-box"></Label>
+		</FlexboxLayout>
+		<FlexboxLayout height="30" width="100%">
+			<Label text="Soustředěnost" paddingLeft="20" width="35%" height="50" class="wrapper-box" textWrap="true"></Label>
+			<Label [text]="depressData[0]?.concentration || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[1]?.concentration || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[2]?.concentration || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[3]?.concentration || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[4]?.concentration || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[5]?.concentration || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[6]?.concentration || '-'" height="50" class="wrapper-box"></Label>
+		</FlexboxLayout>
+		<FlexboxLayout height="30" width="100%">
+			<Label text="Tělesná nepohoda" paddingLeft="20" width="35%" height="50" class="wrapper-box" textWrap="true"></Label>
+			<Label [text]="depressData[0]?.physical_discomfort || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[1]?.physical_discomfort || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[2]?.physical_discomfort || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[3]?.physical_discomfort || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[4]?.physical_discomfort || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[5]?.physical_discomfort || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[6]?.physical_discomfort || '-'" height="50" class="wrapper-box"></Label>
+		</FlexboxLayout>
+		<FlexboxLayout height="30" width="100%">
+			<Label text="Pocit napětí" paddingLeft="20" width="35%" height="50" class="wrapper-box" textWrap="true"></Label>
+			<Label [text]="depressData[0]?.tense_feeling || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[1]?.tense_feeling || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[2]?.tense_feeling || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[3]?.tense_feeling || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[4]?.tense_feeling || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[5]?.tense_feeling || '-'" height="50" class="wrapper-box"></Label>
+			<Label [text]="depressData[6]?.tense_feeling || '-'" height="50" class="wrapper-box"></Label>
+		</FlexboxLayout>
+	</WrapLayout>
+</ScrollView>

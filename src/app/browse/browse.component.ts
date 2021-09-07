@@ -1,15 +1,26 @@
+import { DepressService } from './../shared/depress.service';
 import { Component, OnInit } from '@angular/core';
+import { DepressItem } from '../shared/depress.service';
 
 @Component({
   selector: 'Browse',
-  templateUrl: './browse.component.html'
+  templateUrl: './browse.component.html',
+  styleUrls: [
+    'browse.component.scss'
+  ]
 })
 export class BrowseComponent implements OnInit {
-  constructor() {
-    // Use the component constructor to inject providers.
+
+  depressData: DepressItem[] = [];
+
+  constructor(private _depressService: DepressService) {
   }
 
   ngOnInit(): void {
-    // Use the "ngOnInit" handler to initialize data for the view.
+    this._depressService.depressData$.subscribe(
+      (data) => {
+        this.depressData = data;
+      }
+    );
   }
 }

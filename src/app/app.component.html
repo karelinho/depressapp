@@ -1,4 +1,4 @@
-<TabView androidTabsPosition="bottom">
+<TabView androidTabsPosition="bottom" (selectedIndexChanged)="onSelectedIndexchanged($event)">
   <GridLayout *tabItem="{ title: 'Home' }">
     <page-router-outlet name="homeTab"></page-router-outlet>
   </GridLayout>
