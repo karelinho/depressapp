@@ -1,4 +1,4 @@
-import { DepressService } from './../shared/depress.service';
+import { DepressService } from '../shared/depress.service';
 import { Component, OnInit } from '@angular/core';
 import { DepressItem } from '../shared/depress.service';
 import { DateTimePicker } from "@nativescript/datetimepicker";
@@ -6,13 +6,13 @@ import { EventData } from '@nativescript/core/data/observable';
 import { Button } from '@nativescript/core';
 
 @Component({
-  selector: 'Browse',
-  templateUrl: './browse.component.html',
+  selector: 'View',
+  templateUrl: './view.component.html',
   styleUrls: [
-    'browse.component.scss'
+    'view.component.scss'
   ]
 })
-export class BrowseComponent implements OnInit {
+export class ViewComponent implements OnInit {
 
   minDate: Date = new Date();
 

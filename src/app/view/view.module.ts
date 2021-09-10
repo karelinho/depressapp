@@ -1,16 +1,16 @@
 import { NativeScriptDateTimePickerModule } from '@nativescript/datetimepicker/angular';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { NativeScriptCommonModule } from '@nativescript/angular';
-import { BrowseRoutingModule } from './browse-routing.module';
-import { BrowseComponent } from './browse.component';
+import { ViewRoutingModule } from './view-routing.module';
+import { ViewComponent } from './view.component';
 
 @NgModule({
   imports: [
     NativeScriptCommonModule,
-    BrowseRoutingModule,
+    ViewRoutingModule,
     NativeScriptDateTimePickerModule
   ],
-  declarations: [BrowseComponent],
+  declarations: [ViewComponent],
   schemas: [NO_ERRORS_SCHEMA]
 })
-export class BrowseModule {}
+export class ViewModule {}

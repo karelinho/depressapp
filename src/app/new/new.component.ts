@@ -3,13 +3,13 @@ import { Component, OnInit } from '@angular/core';
 import { formatDate, getLocaleDateFormat } from '@angular/common';
 
 @Component({
-  selector: 'Home',
-  templateUrl: './home.component.html',
+  selector: 'New',
+  templateUrl: './new.component.html',
   styleUrls: [
-    'home.component.scss'
+    'new.component.scss'
   ]
 })
-export class HomeComponent implements OnInit {
+export class NewComponent implements OnInit {
 
   minDate: Date = new Date();
 

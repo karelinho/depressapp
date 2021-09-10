@@ -1,10 +1,10 @@
 <TabView androidTabsPosition="bottom" (selectedIndexChanged)="onSelectedIndexchanged($event)">
-  <GridLayout *tabItem="{ title: 'Home' }">
-    <page-router-outlet name="homeTab"></page-router-outlet>
+  <GridLayout *tabItem="{ title: 'Nový' }">
+    <page-router-outlet name="newTab"></page-router-outlet>
   </GridLayout>
 
-  <GridLayout *tabItem="{ title: 'Browse' }">
-    <page-router-outlet name="browseTab"></page-router-outlet>
+  <GridLayout *tabItem="{ title: 'Přehled' }">
+    <page-router-outlet name="viewTab"></page-router-outlet>
   </GridLayout>
 
   <GridLayout *tabItem="{ title: 'Search' }">
