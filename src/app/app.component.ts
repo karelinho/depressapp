@@ -19,12 +19,13 @@ export class AppComponent implements OnInit {
         this.depressData = data;
       }
     );
+    this.getDepressData();
   }
 
   onSelectedIndexchanged(args: SelectedIndexChangedEventData) {
     const newIndex = args.newIndex;
     if (newIndex === 1) {
-      this.getDepressData();
+      // this.getDepressData();
     }
   }
 

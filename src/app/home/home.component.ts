@@ -104,8 +104,22 @@ export class HomeComponent implements OnInit {
     };
 
     this._depressService.createDailyReport(data).subscribe(
-      () => {},
-      error => console.log(error)
+      () => {
+        let options = {
+          title: 'Úspěšně uloženo',
+          message: 'Záznam byl úspěšně uložen a nelze ho změnit.',
+          okButtonText: 'OK'
+        };
+        alert(options);
+      },
+      error => {
+        let options = {
+          title: 'Neuloženo',
+          message: 'Nelze změnit existující záznam.',
+          okButtonText: 'OK'
+        };
+        alert(options);
+      }
     );
   }
 }
