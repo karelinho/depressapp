@@ -15,99 +15,99 @@ export class NewComponent implements OnInit {
 
   date = this.minDate.getDate() + '.' + (this.minDate.getMonth() + 1) + '.' + this.minDate.getFullYear();
 
-  value1 = 1;
+  sleep = 1;
 
-  value2 = 1;
+  headache = 1;
 
-  value3 = 1;
+  tiredness = 1;
 
-  value4 = 1;
+  appetite = 1;
 
-  value5 = 1;
+  constipation = 1;
 
-  value6 = 1;
+  self_blame_thoughts = 1;
 
-  value7 = 1;
+  mood = 1;
 
-  value8 = 1;
+  self_destructive_thoughts = 1;
 
-  value9 = 1;
+  concentration = 1;
 
-  value10 = 1;
+  physical_discomfort = 1;
 
-  value11 = 1;
+  tense_feeling = 1;
 
   constructor(private _depressService: DepressService) {
   }
 
   ngOnInit(): void {}
 
-  onValue1Change(value: number) {
-    this.value1 = value;
+  onSleepChange(value: number) {
+    this.sleep = value;
   }
 
-  onValue2Change(value: number) {
-    this.value2 = value;
+  onHeadacheChange(value: number) {
+    this.headache = value;
   }
 
-  onValue3Change(value: number) {
-    this.value3 = value;
+  onTirednessChange(value: number) {
+    this.tiredness = value;
   }
 
-  onValue4Change(value: number) {
-    this.value4 = value;
+  onAppetiteChange(value: number) {
+    this.appetite = value;
   }
 
-  onValue5Change(value: number) {
-    this.value5 = value;
+  onConstipationChange(value: number) {
+    this.constipation = value;
   }
 
-  onValue6Change(value: number) {
-    this.value6 = value;
+  onSelfBlameThoughtsChange(value: number) {
+    this.self_blame_thoughts = value;
   }
 
-  onValue7Change(value: number) {
-    this.value7 = value;
+  onMoodChange(value: number) {
+    this.mood = value;
   }
 
-  onValue8Change(value: number) {
-    this.value8 = value;
+  onSelfDestructiveThoughtsChange(value: number) {
+    this.self_destructive_thoughts = value;
   }
 
-  onValue9Change(value: number) {
-    this.value9 = value;
+  onConcentrationChange(value: number) {
+    this.concentration = value;
   }
 
-  onValue10Change(value: number) {
-    this.value10 = value;
+  onPhysicalDiscomfortChange(value: number) {
+    this.physical_discomfort = value;
   }
 
-  onValue11Change(value: number) {
-    this.value11 = value;
+  onTenseFeelingChange(value: number) {
+    this.tense_feeling = value;
   }
 
   saveDailyReport() {
     const data: DepressItem = {
       date: this.minDate.getFullYear() + '-' + (this.minDate.getMonth() + 1) + '-' + this.minDate.getDate(),
       user: 1,
-      sleep: this.value1,
-      headache: this.value2,
-      tiredness: this.value3,
-      appetite: this.value4,
-      constipation: this.value5,
-      self_blame_thoughts: this.value6,
-      mood: this.value7,
-      self_destructive_thoughts: this.value8,
-      concentration: this.value9,
-      physical_discomfort: this.value10,
-      tense_feeling: this.value11
+      sleep: this.sleep,
+      headache: this.headache,
+      tiredness: this.tiredness,
+      appetite: this.appetite,
+      constipation: this.constipation,
+      self_blame_thoughts: this.self_blame_thoughts,
+      mood: this.mood,
+      self_destructive_thoughts: this.self_destructive_thoughts,
+      concentration: this.concentration,
+      physical_discomfort: this.physical_discomfort,
+      tense_feeling: this.tense_feeling
     };
 
     this._depressService.createDailyReport(data).subscribe(
       () => {
         let options = {
           title: 'Úspěšně uloženo',
-          message: 'Záznam byl úspěšně uložen a nelze ho změnit.',
+          message: 'Záznam byl úspěšně uložen. V případě zmeny existujícího záznamu je třeba v přehledu záznamů vybrat znovu datum, aby se zobrazily aktuální data.',
           okButtonText: 'OK'
         };
         alert(options);

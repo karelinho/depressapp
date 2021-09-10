@@ -25,6 +25,8 @@ export class DepressService {
 
   baseUrl = 'http://192.168.167.2:8000/api/depress';
 
+  baseUrl_update = 'http://192.168.167.2:8000/api/depress/1/send_depress/';
+
   depressData$: Subject<DepressItem[]> = new Subject<DepressItem[]>();
 
   constructor(private httpClient: HttpClient) { }
@@ -53,6 +55,6 @@ export class DepressService {
       Authorization: 'Token 61a014471d6be56e396ad18504cbca96a77feb89'
     });
     const body = JSON.stringify(data);
-    return this.httpClient.post(this.baseUrl, body, {headers: headers});
+    return this.httpClient.post(this.baseUrl_update, body, {headers: headers});
   }
 }
