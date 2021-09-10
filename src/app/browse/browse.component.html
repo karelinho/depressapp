@@ -124,5 +124,8 @@
 			<Label [text]="depressData[5]?.tense_feeling || '-'" height="50" class="wrapper-box"></Label>
 			<Label [text]="depressData[6]?.tense_feeling || '-'" height="50" class="wrapper-box"></Label>
 		</FlexboxLayout>
+		<StackLayout height="80" orientation="vertical" width="100%">
+			<Button text="Vybrat datum do" horizontalAlignment="stretch" (tap)="getDailyReport($event)" class="-primary send-button"></Button>
+		</StackLayout>
 	</WrapLayout>
 </ScrollView>

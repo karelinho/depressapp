@@ -50,6 +50,7 @@
     "@nativescript/core": "~8.0.0",
     "@nativescript/theme": "~3.0.1",
     "@nstudio/nativescript-checkbox": "^2.0.4",
+    "@nativescript/datetimepicker": "^2.1.0",
     "nativescript-radiobutton": "^0.1.0",
     "reflect-metadata": "~0.1.13",
     "rxjs": "~6.6.7",

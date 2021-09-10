@@ -29,6 +29,6 @@ export class AppComponent implements OnInit {
   }
 
   getDepressData() {
-    this._depressService.loadDailyReport();
+    this._depressService.loadDailyReport(new Date());
   }
 }
