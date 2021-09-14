@@ -16,6 +16,7 @@ export interface DepressItem {
   concentration?: number;
   physical_discomfort?: number;
   tense_feeling?: number;
+  sleep_length?: string;
 }
 
 @Injectable({
@@ -26,6 +27,8 @@ export class DepressService {
   baseUrl = 'http://192.168.167.2:8000/api/depress';
 
   baseUrl_update = 'http://192.168.167.2:8000/api/depress/1/send_depress/';
+
+  baseUrl_send_message = 'http://192.168.167.2:8000/api/depress/send_message/';
 
   depressData$: Subject<DepressItem[]> = new Subject<DepressItem[]>();
 
@@ -56,5 +59,13 @@ export class DepressService {
     });
     const body = JSON.stringify(data);
     return this.httpClient.post(this.baseUrl_update, body, {headers: headers});
+  }
+
+  sendMessage() {
+    const headers = new HttpHeaders({
+      'Content-Type':  'application/json',
+      Authorization: 'Token 61a014471d6be56e396ad18504cbca96a77feb89'
+    });
+    return this.httpClient.post(this.baseUrl_update, {}, {headers: headers});
   }
 }

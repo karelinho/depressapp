@@ -3,7 +3,7 @@
 </ActionBar>
 
 <ScrollView orientation="vertical">
-	<WrapLayout>
+	<WrapLayout (tap)="clearTextfieldFocus($event)">
 		<FlexboxLayout height="80">
 			<Label [text]="date" paddingLeft="20" paddingTop="20" textAlignment="center" width="100%" height="80" class="h1" textWrap="true"></Label>
 		</FlexboxLayout>
@@ -83,6 +83,10 @@
 			<CheckBox text="2" [checked]="tense_feeling === 2" boxType="circle" (tap)="onTenseFeelingChange(2)"></CheckBox>
 			<CheckBox text="3" [checked]="tense_feeling === 3" boxType="circle" (tap)="onTenseFeelingChange(3)"></CheckBox>
 			<CheckBox text="4" [checked]="tense_feeling === 4" boxType="circle" (tap)="onTenseFeelingChange(4)"></CheckBox>
+		</FlexboxLayout>
+		<FlexboxLayout height="150">
+			<Label text="Délka spánku a ostatní poznámky" paddingLeft="20" width="50%" height="80" class="wrapper-box" textWrap="true"></Label>
+			<TextView id="myTextfield" hint="Vložte poznámku" [text]='sleep_length' (textChange)='onSleepLengthChange($event)' width="40%"></TextView>
 		</FlexboxLayout>
 		<StackLayout height="80" orientation="vertical" width="100%">
 			<Button text="Uložit" horizontalAlignment="stretch" (tap)="saveDailyReport()" class="-primary send-button"></Button>

@@ -1,6 +1,6 @@
 import { DepressItem, DepressService } from '../shared/depress.service';
 import { Component, OnInit } from '@angular/core';
-import { formatDate, getLocaleDateFormat } from '@angular/common';
+import { EventData, TextView } from '@nativescript/core';
 
 @Component({
   selector: 'New',
@@ -37,10 +37,23 @@ export class NewComponent implements OnInit {
 
   tense_feeling = 1;
 
+  sleep_length: string = '8';
+
   constructor(private _depressService: DepressService) {
   }
 
   ngOnInit(): void {}
+
+  clearTextfieldFocus(args) {
+    var layout = args.object;
+    var myTextfield = layout.getViewById("myTextfield");
+    myTextfield.dismissSoftInput();
+  }
+
+  onSleepLengthChange(args: EventData) {
+    const tv = args.object as TextView;
+    this.sleep_length = tv.text;
+  }
 
   onSleepChange(value: number) {
     this.sleep = value;
@@ -100,7 +113,8 @@ export class NewComponent implements OnInit {
       self_destructive_thoughts: this.self_destructive_thoughts,
       concentration: this.concentration,
       physical_discomfort: this.physical_discomfort,
-      tense_feeling: this.tense_feeling
+      tense_feeling: this.tense_feeling,
+      sleep_length: this.sleep_length
     };
 
     this._depressService.createDailyReport(data).subscribe(
@@ -115,7 +129,7 @@ export class NewComponent implements OnInit {
       error => {
         let options = {
           title: 'Neuloženo',
-          message: 'Nelze změnit existující záznam.',
+          message: 'Stala se chyba při ukládání záznamu.',
           okButtonText: 'OK'
         };
         alert(options);
