@@ -66,6 +66,6 @@ export class DepressService {
       'Content-Type':  'application/json',
       Authorization: 'Token 61a014471d6be56e396ad18504cbca96a77feb89'
     });
-    return this.httpClient.post(this.baseUrl_update, {}, {headers: headers});
+    return this.httpClient.post(this.baseUrl_send_message, {}, {headers: headers});
   }
 }

@@ -5,7 +5,7 @@ import { NativeScriptRouterModule, NSEmptyOutletComponent } from '@nativescript/
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/(newTab:new/default//viewTab:view/default//searchTab:search/default)',
+    redirectTo: '/(newTab:new/default//viewTab:view/default//messageTab:message/default)',
     pathMatch: 'full',
   },
 
@@ -22,10 +22,10 @@ const routes: Routes = [
     outlet: 'viewTab',
   },
   {
-    path: 'search',
+    path: 'message',
     component: NSEmptyOutletComponent,
-    loadChildren: () => import('~/app/search/search.module').then((m) => m.SearchModule),
-    outlet: 'searchTab',
+    loadChildren: () => import('~/app/search/message.module').then((m) => m.MessageModule),
+    outlet: 'messageTab',
   },
 ]
 

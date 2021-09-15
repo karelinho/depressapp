@@ -1,0 +1,8 @@
+<ActionBar>
+  <Label text="DepressApp - Zpráva"></Label>
+</ActionBar>
+
+<GridLayout class="page__content">
+	<Label *ngIf="sending === true" class="page__content-placeholder" text="Email se odesílá..." paddingLeft="20"></Label>
+	<Button *ngIf="sending === false" text="Odeslat email" horizontalAlignment="stretch" (tap)="sendEmail()" class="-primary send-button"></Button>
+</GridLayout>
