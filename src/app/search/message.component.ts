@@ -10,8 +10,14 @@ export class MessageComponent implements OnInit {
 
   sending = false;
 
+  logged = false;
+
   constructor(private _depressService: DepressService) {
-    // Use the constructor to inject services.
+    this._depressService.logged$.subscribe(
+      (value) => {
+        this.logged = value;
+      }
+    );
   }
 
   ngOnInit(): void {

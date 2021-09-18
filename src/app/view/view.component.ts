@@ -26,7 +26,17 @@ export class ViewComponent implements OnInit {
 
   depressData: DepressItem[] = [];
 
+  logged = false;
+
   constructor(private _depressService: DepressService) {
+    this._depressService.logged$.subscribe(
+      (value) => {
+        this.logged = value;
+        if (value) {
+          this._depressService.loadDailyReport(new Date());
+        }
+      }
+    );
   }
 
   ngOnInit(): void {

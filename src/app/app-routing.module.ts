@@ -5,10 +5,15 @@ import { NativeScriptRouterModule, NSEmptyOutletComponent } from '@nativescript/
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/(newTab:new/default//viewTab:view/default//messageTab:message/default)',
+    redirectTo: '/(authTab:auth/default//newTab:new/default//viewTab:view/default//messageTab:message/default)',
     pathMatch: 'full',
   },
-
+  {
+    path: 'auth',
+    component: NSEmptyOutletComponent,
+    loadChildren: () => import('~/app/auth/auth.module').then((m) => m.AuthModule),
+    outlet: 'authTab',
+  },
   {
     path: 'new',
     component: NSEmptyOutletComponent,

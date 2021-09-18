@@ -2,7 +2,10 @@
   <Label text="DepressApp - Nový záznam"></Label>
 </ActionBar>
 
-<ScrollView orientation="vertical">
+<GridLayout *ngIf="!logged">
+	<Label text="Nejdříve se přihlašte!" class="h2" height="80" class="wrapper-box" textWrap="true" horizontalAlignment="center"></Label>
+</GridLayout>
+<ScrollView *ngIf="logged" orientation="vertical">
 	<WrapLayout (tap)="clearTextfieldFocus($event)">
 		<FlexboxLayout height="80">
 			<Label [text]="date" paddingLeft="20" paddingTop="20" textAlignment="center" width="100%" height="80" class="h1" textWrap="true"></Label>

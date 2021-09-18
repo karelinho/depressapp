@@ -1,0 +1,15 @@
+<ActionBar>
+  <Label text="DepressApp - Login"></Label>
+</ActionBar>
+<StackLayout *ngIf="!logged" paddingTop="50" (tap)="clearTextfieldFocus($event)">
+  <Label class="h2" text="Jméno" marginLeft="20"></Label>
+  <TextField id="myTextfield" [(ngModel)]='auth.username' autocapitalizationType="none"></TextField>
+  <Label class="h2" text="Heslo" marginLeft="20"></Label>
+  <TextField id="myTextfield2" [(ngModel)]="auth.password" secure="true"></TextField>
+  <Button text="Přihlásit se" (tap)="login()" class="-primary -rounded-lg" height='50'></Button>
+</StackLayout>
+<GridLayout *ngIf="logged" class="page__content">
+	<Button text="Odhlásit se" horizontalAlignment="stretch" (tap)="logout()" class="-primary send-button"></Button>
+</GridLayout>
+
+

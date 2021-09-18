@@ -39,7 +39,16 @@ export class NewComponent implements OnInit {
 
   sleep_length: string = '8';
 
-  constructor(private _depressService: DepressService) {
+  logged = false;
+
+  constructor(
+    private _depressService: DepressService
+  ) {
+    this._depressService.logged$.subscribe(
+      (value) => {
+        this.logged = value;
+      }
+    );
   }
 
   ngOnInit(): void {}

@@ -1,4 +1,8 @@
-<TabView androidTabsPosition="bottom" (selectedIndexChanged)="onSelectedIndexchanged($event)">
+<TabView androidTabsPosition="bottom">
+  <GridLayout *tabItem="{ title: 'Login' }">
+    <page-router-outlet name="authTab"></page-router-outlet>
+  </GridLayout>
+
   <GridLayout *tabItem="{ title: 'Nový' }">
     <page-router-outlet name="newTab"></page-router-outlet>
   </GridLayout>
