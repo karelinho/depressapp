@@ -26,13 +26,13 @@ export interface DepressItem {
 })
 export class DepressService {
 
-  baseUrl = 'http://192.168.167.2:8000/api/depress';
+  baseUrl = 'https://depress-app.herokuapp.com/api/depress';
 
-  baseUrl_update = 'http://192.168.167.2:8000/api/depress/1/send_depress/';
+  baseUrl_update = 'https://depress-app.herokuapp.com/api/depress/1/send_depress/';
 
-  baseUrl_send_message = 'http://192.168.167.2:8000/api/depress/send_message/';
+  baseUrl_send_message = 'https://depress-app.herokuapp.com/api/depress/send_message/';
 
-  baseUrl_auth = 'http://192.168.167.2:8000/auth/';
+  baseUrl_auth = 'https://depress-app.herokuapp.com/auth/';
 
   depressData$: Subject<DepressItem[]> = new Subject<DepressItem[]>();
 
